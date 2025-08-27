@@ -1,6 +1,6 @@
 # Kanban Board
 
-A modern Kanban board application built with React and DND Kit for smooth drag-and-drop functionality. This project allows users to organize tasks across different columns in a Kanban-style interface.
+A modern BASIC Kanban board application built with React and DND Kit for smooth drag-and-drop functionality. This project allows users to organize tasks across different columns in a Kanban-style interface.
 
 ## Features
 
