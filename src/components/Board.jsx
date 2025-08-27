@@ -141,7 +141,9 @@ export default function Board({ board, setBoard }) {
     }
 
     return (
+        <div className="p-4 min-h-screen bg-gray-100">
         <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+            <div className="flex flex-col md:flex-row gap-4 overflow-x-auto min-h-[calc(100vh-2rem)] items-start">
             <SortableContext items={boardData.columnOrder} strategy={horizontalListSortingStrategy}>
                 <div className="flex gap-4 overflow-x-auto p-4">
                     {boardData.columnOrder.map((columnId) => {
@@ -161,6 +163,8 @@ export default function Board({ board, setBoard }) {
                     })}
                 </div>
             </SortableContext>
+            </div>
         </DndContext>
+        </div>
     );
 }

@@ -20,7 +20,7 @@ export default function Column({ column, cards, onAddCard, onEditCard, onDeleteC
       style={style}
       {...attributes}
       {...listeners}
-      className="bg-blue-500 rounded-lg p-4 w-72"
+      className="bg-blue-500 rounded-lg p-4 w-full sm:w-72 max-w-sm"
     >
       <h2 className="font-semibold mb-3">{column.title}</h2>
 

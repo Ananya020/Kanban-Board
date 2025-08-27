@@ -18,13 +18,16 @@ export default function Card({ card, onEdit, onDelete }) {
       {...listeners}
       className="p-3 mb-2 bg-blue-800 rounded-lg shadow cursor-pointer flex justify-between items-center"
     >
-      <span>{card.content}</span>
+      {/* Card text (wraps on small screens) */}
+      <span className="break-words pr-2">{card.content}</span>
+
+      {/* Actions */}
       <div className="flex gap-2">
         <button
-          className="text-sm text-white hover:text-gray-200"
+          className="px-2 py-1 text-xs sm:text-sm text-white hover:text-gray-200 rounded"
           onClick={(e) => {
             e.stopPropagation();
-            const newContent = prompt("Edit card", card.content);   
+            const newContent = prompt("Edit card", card.content);
             if (newContent && newContent.trim()) {
               onEdit(card.id, newContent.trim());
             }
@@ -33,7 +36,7 @@ export default function Card({ card, onEdit, onDelete }) {
           Edit
         </button>
         <button
-          className="text-sm text-red-300 hover:text-red-100"
+          className="px-2 py-1 text-xs sm:text-sm text-red-300 hover:text-red-100 rounded"
           onClick={(e) => {
             e.stopPropagation();
             if (confirm("Are you sure you want to delete this card?")) {
